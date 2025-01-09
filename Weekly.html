@@ -1,1 +1,70 @@
-
+<html>
+<title>Spanish Guesser</title>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Space Grotesk', serif;
+            background-color: #DEDEDE;
+            background-color: #CACACA;
+        }
+        #game-container {
+            text-align: center;
+        }
+        input[type="text"] {
+            font-weight: 400;
+            text-transform: lowercase;
+            font-family: 'Space Grotesk', serif;
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        h1, h2 {
+            font-family: 'Space Grotesk', serif;
+        }
+        #counter {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <img src="logo.png" style="text-align:center;">
+        <h1 id="result" style="font-weight: 300;">Type into the box to Guess a word</h1>
+        <div>
+            <input type="text" id="input">
+            <button onclick="Guess()">Guess</button>
+        </div>
+        <h1 style="font-weight: 700;">Guesses</h1>
+        <h1 id="counter" style="font-weight: 700;">0</h1>
+        <h2 style="font-weight: 700;">_spe__al__ar_e</h2>
+    </div>
+    <script>
+        let IntCount = 0;
+        function Guess() {
+            let Guess = document.getElementById("input").value;
+            let Result = document.getElementById("result");
+            let Count = document.getElementById("counter");
+            IntCount += 1;
+            Count.innerHTML = IntCount;
+            if (Guess === "especializarse",Guess === "Especializarse") {
+                Result.innerHTML = "You Guessed The Word!";
+            } else {
+                Result.innerHTML = "Incorrect! Try Again!";
+            }
+        }
+    </script>
+</body>
+</html>
